@@ -159,6 +159,8 @@ sub _parse_mxtypes_from_statement {
 
 1;
 
+=for Pod::Coverage scan_for_prereqs
+
 =head1 SEE ALSO
 
 =for :list
