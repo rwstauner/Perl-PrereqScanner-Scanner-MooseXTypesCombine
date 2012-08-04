@@ -42,7 +42,8 @@ As always patches and bug reports are welcome.
 sub scan_for_prereqs {
   my ($self, $ppi_doc, $req) = @_;
 
-  # * split doc into chunks by package (very tricky - PPI does not support this yet)
+  # * split doc into chunks by package
+  #   (TODO: try PPIx::Utilities::Node/split_ppi_node_by_namespace())
   # * for each package:
   # * check for base/parent/isa
   # * find provide_types_from
