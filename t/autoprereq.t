@@ -9,6 +9,7 @@ use Try::Tiny;
 
 use Test::More;
 
+# cargo-culted from Perl::PrereqScanner
 sub prereq_is {
   my ($str, $want, $comment) = @_;
   $comment ||= $str;
@@ -46,7 +47,6 @@ sub prereq_is {
   };
 }
 
-# test cases for MooseXTypesCombine
 prereq_is(
   <<MXTC,
 use parent 'MooseX::Types::Combine';
