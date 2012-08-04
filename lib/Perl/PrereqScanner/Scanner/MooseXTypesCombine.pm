@@ -13,7 +13,7 @@ use Params::Util ();
 
   Perl::PrereqScanner->new( extra_scanners => ['MooseXTypesCombine'] );
 
-=head2 Dist::Zilla::Plugin::AutoPrereqs
+Or with L<Dist::Zilla::Plugin::AutoPrereqs>:
 
   # dist.ini
   [AutoPrereqs]
