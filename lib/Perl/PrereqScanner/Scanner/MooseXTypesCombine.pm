@@ -4,7 +4,7 @@ use warnings;
 package Perl::PrereqScanner::Scanner::MooseXTypesCombine;
 use Moose;
 with 'Perl::PrereqScanner::Scanner';
-# ABSTRACT: scan for type libraries exported with MooseX::Types::Combine
+# ABSTRACT: Scan for type libraries exported with MooseX::Types::Combine
 
 use List::MoreUtils qw( any );
 use Params::Util ();
