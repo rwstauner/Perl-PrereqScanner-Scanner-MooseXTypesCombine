@@ -158,6 +158,15 @@ sub _parse_mxtypes_from_statement {
       @$words;
 }
 
+# core has a method like this but it's not public
+# we can use a simplified version here since we don't care about Numbers
+sub _q_contents {
+  my ($self, $token) = @_;
+  return $token->isa('PPI::Token::QuoteLike::Words')
+    ? $token->literal
+    : $token->string;
+}
+
 1;
 
 =for Pod::Coverage scan_for_prereqs
