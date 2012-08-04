@@ -9,10 +9,23 @@ with 'Perl::PrereqScanner::Scanner';
 use List::MoreUtils qw( any );
 use Params::Util ();
 
+=head1 SYNOPSIS
+
+  Perl::PrereqScanner->new( extra_scanners => ['MooseXTypesCombine'] );
+
+=head2 Dist::Zilla::Plugin::AutoPrereqs
+
+  # dist.ini
+  [AutoPrereqs]
+  extra_scanners = MooseXTypesCombine
+
 =head1 DESCRIPTION
 
 This scanner will look for L<MooseX::Types> libraries
 exported via L<MooseX::Types::Combine>.
+
+It is currently very naive and very specific
+but works for simple cases like this:
 
   package MyTypes;
   use parent 'MooseX::Types::Combine';
@@ -21,6 +34,8 @@ exported via L<MooseX::Types::Combine>.
     MooseX::Types::Moose
     MooseX::Types::Path::Class
   ));
+
+As always patches and bug reports are welcome.
 
 =cut
 
@@ -143,3 +158,12 @@ sub _parse_mxtypes_from_statement {
 }
 
 1;
+
+=head1 SEE ALSO
+
+=for :list
+* L<Perl::PrereqScanner>
+* L<Dist::Zilla::Plugin::AutoPrereqs>
+* L<MooseX::Types::Combine>
+
+=cut
